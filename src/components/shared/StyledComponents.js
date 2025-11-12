@@ -32,8 +32,17 @@ export const Technologies = styled.div`
 
 export const Technology = styled.div`
     font-size: 12px;
-    color: #000000;
-    background-color: ${({ theme }) => theme.primary + 20};
+    color: ${({ theme }) => {
+        // Check if dark mode by checking if bg is dark
+        const isDark = theme.bg === "#1C1C27" || theme.bg === "#1C1E27";
+        return isDark ? theme.white : "#000000";
+    }};
+    background-color: ${({ theme }) => {
+        // Check if dark mode
+        const isDark = theme.bg === "#1C1C27" || theme.bg === "#1C1E27";
+        // For dark mode, use a more visible background with primary color
+        return isDark ? theme.primary + "40" : theme.primary + "20";
+    }};
     border-radius: 16px;
     padding: 5px 10px;
     font-weight: 600;

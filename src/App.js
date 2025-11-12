@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { darkTheme, lightTheme } from './utils/themes';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
@@ -38,25 +37,23 @@ const AppContent = () => {
 
   return (
     <StyledThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <BrowserRouter>
-        <Navbar/>
-        <Body>
-          <HeroSection/>
-          <Wrapper>
-            <Skills/>
-            <Experience/>
-          </Wrapper>
-          <Projects setOpenModal = {setOpenModal}/>
-          <Wrapper>
-            <Contact/>
-          </Wrapper>
-          <Footer/>
-          { 
-            openModal.state &&
-            <ProjectDetails openModal = {openModal} setOpenModal = {setOpenModal}/>
-          }
-        </Body>
-      </BrowserRouter>
+      <Navbar/>
+      <Body>
+        <HeroSection/>
+        <Wrapper>
+          <Skills/>
+          <Experience/>
+        </Wrapper>
+        <Projects setOpenModal = {setOpenModal}/>
+        <Wrapper>
+          <Contact/>
+        </Wrapper>
+        <Footer/>
+        { 
+          openModal.state &&
+          <ProjectDetails openModal = {openModal} setOpenModal = {setOpenModal}/>
+        }
+      </Body>
     </StyledThemeProvider>
   );
 };

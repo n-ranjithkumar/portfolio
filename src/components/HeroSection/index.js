@@ -4,6 +4,7 @@ import Typewriter from 'typewriter-effect';
 import HeroImg from '../../images/HeroSection/HeroImg.jpg';
 import { FaDownload } from 'react-icons/fa';
 import { Tilt } from 'react-tilt';
+import { useState, useEffect } from 'react';
 
 export const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -20,31 +21,6 @@ export const HeroContainer = styled.div`
   z-index: 1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
-
-export const HeroBg = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1360px;
-  overflow: hidden;
-  padding: 0 30px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
-  @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
-  }
-`;
-
 
 
 export const HeroInnerContainer = styled.div`
@@ -100,9 +76,13 @@ export const HeroRightContainer = styled.div`
 export const ImgWrapper = styled.div`
   padding: 6px;
   border-radius: 50%;
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: ${({ loaded, theme }) => 
+    loaded 
+      ? 'linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%)' 
+      : 'transparent'};
   display: inline-block;
   width: fit-content;
+  transition: background 0.3s ease;
 `;
 
 export const Img = styled.img`
@@ -119,6 +99,7 @@ export const Img = styled.img`
   transition: all 0.3s ease;
   object-fit: cover;
   object-position: center top;
+  display: block;
 
   &:hover {
     transform: scale(1.03);
@@ -257,6 +238,27 @@ const defaultOptions = {
 };
 
 export const HeroSection = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the image immediately on component mount
+    const img = new Image();
+    img.src = HeroImg;
+    
+    // If image is already cached, set loaded immediately
+    if (img.complete) {
+      setImageLoaded(true);
+    } else {
+      img.onload = () => {
+        setImageLoaded(true);
+      };
+      img.onerror = () => {
+        // Even on error, show the image (browser will handle it)
+        setImageLoaded(true);
+      };
+    }
+  }, []);
+
   return (
     <div id="about">
       <HeroContainer>
@@ -283,8 +285,15 @@ export const HeroSection = () => {
           </HeroLeftContainer>
           <HeroRightContainer id="Right">
             <Tilt options={defaultOptions}>
-              <ImgWrapper>
-                <Img src={HeroImg} alt="hero-image" />
+              <ImgWrapper loaded={imageLoaded}>
+                <Img 
+                  src={HeroImg} 
+                  alt="hero-image" 
+                  loaded={imageLoaded}
+                  loading="eager"
+                  fetchPriority="high"
+                  onLoad={() => setImageLoaded(true)}
+                />
               </ImgWrapper>
             </Tilt>
           </HeroRightContainer>

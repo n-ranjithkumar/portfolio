@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
@@ -14,7 +14,11 @@ export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // Check localStorage for saved theme preference
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'dark' : true; // Default to dark mode
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    // Default to light mode for new visitors
+    return false;
   });
 
   useEffect(() => {
