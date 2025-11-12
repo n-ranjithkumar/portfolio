@@ -21,9 +21,9 @@ import TailwindImg from "../images/Skills/tailwind-css.png";
 import NextJsImg from "../images/Skills/nextjs.svg";
 import BootstrapImg from "../images/Skills/bootstrap.png";
 import DockerImg from "../images/Skills/docker.png";
-import PostgresImg from "../images/Skills/postgresql.svg";
+import PostgresImg from "../images/Skills/postgresql.png";
 import InternstudioImg from "../images/Experience/internstudio.png";
-import GnapiImg from "../images/Experience/gnapi.svg";
+import GnapiImg from "../images/Experience/gnapi-tech.webp";
 import VdartImg from "../images/Experience/vdart.png";
 import FidelityCertImg from "../images/Experience/fidelity-intern-cert.png";
 import RocketlaneCertImg from "../images/Experience/rocketlane-intern-cert.png";
@@ -45,7 +45,7 @@ export const Bio = {
       `I am a passionate and adaptable Computer Science Engineering student with a keen interest in exploring diverse domains of technology. 
       I thrive in dynamic environments, embracing challenges that drive innovation and continuous learning. 
       With a problem-solving mindset and attention to detail, I strive to create high-quality, impactful solutions. 
-      Driven by curiosity and a commitment to growth, I aim to make a meaningful impact in the ever-evolving tech world.`,
+      Driven by curiosity and a commitment to growth, I aim to make a meaningful contribution to the ever-evolving tech industry.`,
     github: "https://github.com/n-ranjithkumar",
     resume:
       "https://drive.google.com/file/d/1cTA6rcpsS8t30bUdkj1Jr31w-ekEbTCb/view?usp=drive_link",
@@ -54,7 +54,7 @@ export const Bio = {
 
 export const skills = {
   title: "Skills",
-  desc: "Take a look at the skills I bring to the table..",
+  desc: "A comprehensive overview of my technical expertise and competencies.",
   data: [
     {
       skillTitle: "Programming Languages",
@@ -177,7 +177,7 @@ export const skills = {
 
 export const experience = {
   title: 'Experience',
-  desc: "Take a look at my career path so far..",
+  desc: "A summary of my professional journey and contributions.",
   data: [
     {
       role: 'Trainee',
@@ -188,7 +188,7 @@ export const experience = {
         image: FidelityCertImg,
         link: '#'
       },
-      contribution: `Contributing to product features and POCs as a trainee while learning production-grade patterns. Building UI with Next.js and TypeScript, integrating REST APIs, and working with PostgreSQL and MongoDB data models. Containerizing dev workflow using Docker for consistent environments.`,
+      contribution: `Contributing to product features and POCs as a trainee while learning production-grade patterns. Building UI with Next-js and TypeScript, integrating REST APIs, and working with PostgreSQL and MongoDB data models. Containerizing dev workflow using Docker for consistent environments.`,
       technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Docker']
     },
     {
@@ -201,10 +201,9 @@ export const experience = {
         link: 'https://drive.google.com/file/d/1rSh7f8sQAESazErP4nayL3m_aY6ln6st/view?usp=drive_link'
       },
       contribution: `Collaborated with a team of two as a Full Stack Web Development Intern, 
-      leveraging advanced technologies to create the Document Onboarding Toolkit; 
-      optimized workflow efficiency, resulting in a 50% reduction in document processing time.
+      leveraging advanced technologies to create the Document Onboarding Toolkit. 
       Developed and deployed a user-friendly toolkit that empowered system users to seamlessly
-      onboard documents, eliminating manual steps and reducing onboarding time by 50%.`,
+      onboard documents, eliminating manual steps and optimizing workflow efficiency, resulting in a 50% reduction in document processing time.`,
       technologies: ['React Js', 'JavaScript', 'Python', 'Django Rest Framework']
     },
     {
@@ -216,9 +215,9 @@ export const experience = {
         image: RocketlaneCertImg,
         link: 'https://drive.google.com/file/d/1iipS4EqSLYJ9MpIq19lDecAboHw3EW3q/view?usp=drive_link'
       },
-      contribution: `Successfully identified and resolved bugs in the frontend codebase, 
+      contribution: `Identified and resolved critical bugs in the frontend codebase, 
       enhancing user experience and improving overall application functionality.
-      Demonstrated proficiency in utilizing debugging tools and techniques to efficiently 
+      Utilized advanced debugging tools and techniques to efficiently 
       locate and address frontend issues, ensuring smooth and error-free user interactions.`,
       technologies: ['HTML', 'CSS', 'JavaScript', 'React Js', 'Node Js', 'Express Js', 'MongoDb']
     }
@@ -228,12 +227,12 @@ export const experience = {
 
 export const education = {
   title: 'Education',
-  desc: "Take a look at my educational background...",
+  desc: "My academic qualifications and educational achievements.",
   data: [
     {
       school: 'SASTRA University, Thanjavur',
       degree: 'B.Tech - Computer Science and Engineering',
-      grade: '6.5 CGPA',
+      grade: '6.65 CGPA',
       courses: ['OOP', 'Data Structures', 'Algorithms', 'Operating System', 'Computer Networks'],
       duration: ' 2021 - 2025'
     },
@@ -256,7 +255,7 @@ export const education = {
 
 export const projects = {
   title: 'Projects',
-  desc: 'Take a look at my featured projects..',
+  desc: 'Showcase of my notable projects and technical implementations.',
   data: [
     {
       name: 'Smart Intern Management System with AI Chatbot',
@@ -267,32 +266,31 @@ export const projects = {
       Implemented role-based access control (RBAC) to provide secure, tailored access for Interns, Staff, HR, and Admin users based on their responsibilities.
       Applied PBKDF2_SHA256 hashing algorithm for robust password encryption, ensuring secure authentication and data protection.`,
       link: '',
-      githubLink: 'https://github.com/5ujith/PrepX-Frontend'
+      githubLink: 'https://github.com/n-ranjithkumar'
     },
     {
       name: 'E-Commerce Website Design',
       image: CartXImg,
       technologies: ['React Js', 'Tailwind CSS', 'Node Js', 'Express Js', 'MySql'],
-      desc: `A full-stack e-commerce platform designed and implemented in front-end development by building responsive and dynamic user interfaces using HTML, CSS, JavaScript, and Reactjs, ensuring a smooth and modern user experience across devices.
-      In backend using Nodejs with MongoDB, enabling efficient management of product inventory, user accounts, and order processing workflows.
-      Integrated key e-commerce features such as product search, user reviews, shopping cart, and checkout system to enhance functionality and usability.
-      Applied secure authentication and session management to protect user data and improve platform reliability.`,
+      desc: `A full-stack e-commerce platform with responsive and dynamic user interfaces built using HTML, CSS, JavaScript, and React.js, ensuring a smooth and modern user experience across devices.
+      Implemented backend services using Node.js with MySQL, enabling efficient management of product inventory, user accounts, and order processing workflows.
+      Integrated key e-commerce features including product search, user reviews, shopping cart, and checkout system to enhance functionality and usability.
+      Applied secure authentication and session management protocols to protect user data and improve platform reliability.`,
       link: '',
-      githubLink: 'https://github.com/5ujith/CartX-Frontend'
+      githubLink: 'https://github.com/n-ranjithkumar'
     },
     {
       name: 'Movie Recommendation System',
       image: MovieImg,
-      technologies: ['Html', 'CSS', 'Javascript'],
-      desc: ` Built a content-based system using metadata to recommend movies and predict target audience preferences.
-       Built a content-based system using metadata to recommend movies and predict target audience preferences.
-      Applied TF-IDF, cosine similarity, and SMOTE to enhance recommendation accuracy and model robustness.
-      Improved performance using Stratified K-Fold validation for balanced training and reliable audience targeting.`,
+      technologies: ['Python', 'CNN', 'Pandas', 'Tensorflow', 'Scikit-learn'],
+      desc: `Developed a content-based recommendation system using metadata to recommend movies and predict target audience preferences.
+      Applied TF-IDF, cosine similarity, and SMOTE techniques to enhance recommendation accuracy and model robustness.
+      Implemented Stratified K-Fold validation for balanced training and reliable audience targeting.`,
       link: '',
-      githubLink: 'https://github.com/5ujith/Musically'
+      githubLink: 'https://github.com/n-ranjithkumar'
     },
     {
-      name: 'Web Application For Standarization of Gulcocorticoids',
+      name: 'Web Application For Standardization of Glucocorticoids',
       image: GulcoImg,
       technologies: ['MERN Stack', 'AES-128', 'Bcrypt', 'CSRF', 'SSL'],
       desc: `Developed a web application using the MERN stack to standardize cumulative glucocorticoid dosage across different treatment types and administration routes.
@@ -300,7 +298,7 @@ export const projects = {
        Integrated CSRF token validation for each client request (login, register, transaction) to protect against cross-site request forgery attacks.
         Configured self-signed SSL certificates to establish secure HTTPS connections and safeguard communication between the frontend and backend.`,
       link: '',
-      githubLink: 'https://github.com/5ujith/MatchingTiles'
+      githubLink: 'https://github.com/n-ranjithkumar'
     },
   
   ]

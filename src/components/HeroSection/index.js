@@ -118,7 +118,7 @@ export const Img = styled.img`
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 
   &:hover {
     transform: scale(1.03);
@@ -133,6 +133,7 @@ export const Img = styled.img`
   @media (max-width: 768px) {
     max-width: 350px;
     max-height: 350px;
+    object-position: center 20%;
   }
 
   @media (max-width: 640px) {
@@ -140,11 +141,13 @@ export const Img = styled.img`
     max-height: 300px;
     min-width: 250px;
     min-height: 250px;
+    object-position: center 20%;
   }
 
   @media (max-width: 480px) {
     max-width: 280px;
     max-height: 280px;
+    object-position: center 20%;
   }
 `;
 
@@ -202,8 +205,6 @@ export const SubTitle = styled.div`
 `;
 
 export const ResumeButton = styled.a`
-  -webkit-appearance: button;
-  -moz-appearance: button;
   appearance: button;
   text-decoration: none;
   width: 95%;
@@ -212,30 +213,36 @@ export const ResumeButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 0;
-  color:${({ theme }) => theme.white};
-  border-radius: 20px;
+  padding: 14px 0;
+  color: ${({ theme }) => theme.white};
+  border-radius: 18px;
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
-  transition: all 0.4s ease-in-out !important;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(225deg, #8b5cf6 0%, #d946ef 100%);
+  transition: all 0.3s ease;
+  border: none;
+
+  /* Subtle glow instead of dark shadow */
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+
   &:hover {
-      transform: scale(1.05);
-      transition: all 0.4s ease-in-out;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-      filter: brightness(1);
-  }    
-  
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(139, 92, 246, 0.2);
+  }
+
   @media (max-width: 640px) {
-      padding: 12px 0;
-      font-size: 18px;
-  } 
+    padding: 12px 0;
+    font-size: 18px;
+  }
 `;
+
 
 const defaultOptions = {
   reverse: false,

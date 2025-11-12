@@ -32,8 +32,17 @@ export const Technologies = styled.div`
 
 export const Technology = styled.div`
     font-size: 12px;
-    color: ${({ theme }) => theme.primary};
+    color: #000000;
     background-color: ${({ theme }) => theme.primary + 20};
     border-radius: 16px;
     padding: 5px 10px;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+        font-weight: 600;
+    }
+
+    @media (max-width: 500px) {
+        font-weight: 600;
+    }
 `;

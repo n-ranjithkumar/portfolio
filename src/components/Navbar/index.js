@@ -65,7 +65,8 @@ const NavLink = styled.a`
     border-radius: 10px;
     background: ${({ active, theme }) => (active ? theme.primary : 'transparent')};
     &:hover {
-        color: ${({ theme }) => theme.primary};
+        color: ${({ active, theme }) => (active ? theme.white : theme.primary)};
+        background: ${({ active, theme }) => (active ? theme.primary : 'transparent')};
     }
 `;
 
@@ -95,7 +96,7 @@ const MobileMenu = styled.div`
     top: 80px;
     right: 0;
     width: 100%;
-    background: ${({ theme }) => theme.card_light + 99};
+    background: ${({ theme }) => theme.card_light};
     transition: all 0.3s ease-in-out;
     padding: 12px 40px 24px 40px;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};

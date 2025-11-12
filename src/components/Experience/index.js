@@ -181,11 +181,24 @@ const Org = styled.div`
 `;
 
 const Duration = styled.div`
-    font-weight: 250;
+    font-weight: 500;
     display: flex;
     gap: 6px;
     align-items: center;
     font-size: 12px;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+        font-weight: 600;
+        font-size: 13px;
+        opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+        font-weight: 600;
+        font-size: 12px;
+        opacity: 1;
+    }
 `;
 
 const Top = styled.div`
@@ -230,6 +243,18 @@ const CertificateImage = styled.img`
 
 const CertificateLink = styled.a`
     color: ${({ theme }) => theme.text_secondary};
+    font-weight: 500;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+        font-weight: 600;
+        opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+        font-weight: 600;
+        opacity: 1;
+    }
 `;
 
 export const Experience = () => {
@@ -282,8 +307,7 @@ export const Experience = () => {
                                             <Technologies>
                                                 {
                                                     item?.technologies.map((tech, index) => (
-                                                        <Technology key = {index} 
-                                                        style = {{ color: "#b1b2b3"}}>
+                                                        <Technology key = {index}>
                                                             {tech}
                                                         </Technology>
                                                     ))

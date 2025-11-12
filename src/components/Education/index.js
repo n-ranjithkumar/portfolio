@@ -34,7 +34,7 @@ const EducationContainer = styled.div`
 const Qualification = styled.div`
     border: 0.1px solid ${({ theme }) => theme.primary};
     width: 600px;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_secondary + 'DD'};
     padding: 20px 40px;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
     border-radius: 16px;
@@ -53,6 +53,7 @@ const Qualification = styled.div`
         max-width: 400px;
         max-height: 370px;
         padding: 20px 36px;
+        color: ${({ theme }) => theme.text_secondary + 'EE'};
         &:hover {
             max-height: fit-content;
         }
@@ -62,6 +63,7 @@ const Qualification = styled.div`
         max-width: 310px;
         max-height: 280px;
         padding: 15px 30px;
+        color: ${({ theme }) => theme.text_secondary + 'FF'};
         &:hover {
             max-height: fit-content;
         }
@@ -90,8 +92,21 @@ const Degree = styled.div`
 `;
 
 const Duration = styled.div`
-    font-weight: 250;
+    font-weight: 500;
     font-size: 12px;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+        font-weight: 600;
+        font-size: 13px;
+        opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+        font-weight: 600;
+        font-size: 12px;
+        opacity: 1;
+    }
 `;
 
 const Courses = styled.div`
